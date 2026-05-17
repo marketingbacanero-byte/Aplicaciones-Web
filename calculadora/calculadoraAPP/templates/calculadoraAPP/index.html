@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>    
+    
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+<body>
+
+<div class="container">
+    <h2>Calculadora</h2>  
+    <form method="POST" >
+        {% csrf_token %}
+        <!-- El atributo 'value' mantiene los numeros escritos despues de recargar -->
+        <input type="number" step="any" name="n1" placeholder="Valor 1" value="{{ n1 }}" required>
+        <input type="number" step="any" name="n2" placeholder="Valor 2" value="{{ n2 }}" required>
+        <!-- Cada boton envía el formulario pero con un valor de 'operacion' diferente -->
+        <div class="button-group">
+            <button type="submit" formaction="{% url 'sumaU' %}">+</button>       
+            <button type="submit" formaction="{% url 'restaU' %}">-</button>
+            <button type="submit" formaction="{% url 'multiplicacionU' %}">*</button>
+            <button type="submit" formaction="{% url 'divisionU' %}">/</button>
+            <button type="submit" formaction="{% url 'calculadoraU' %}">Borrar</button>
+        </div>
+    </form>
+    <div class="res-box">
+        <p id="resultado">
+            {% if resultado is not None %}
+                Resultado: {{ resultado }}
+            {% else %}
+                Resultado: -
+            {% endif %}
+        </p>
+    </div>
+</div>
+
+</body>
+</html>
