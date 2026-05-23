@@ -1,5 +1,9 @@
 from django.shortcuts import render
 # Create your views here.
+
+def inicioV(request):  
+    return render(request,"calculadoraApp/inicio.html")
+
 def calculadoraV(request):  
     return render(request,"calculadoraApp/index.html")
 
