@@ -11,6 +11,8 @@
 <body>
 
 <div class="container">
+    <a href="{% url 'inicioU' %}" class="menu-link activo">Inicio</a>
+    <a href="{% url 'calculadoraU' %}" class="menu-link">Calculadora</a> 
     <h2>Calculadora</h2>  
     <form method="POST" >
         {% csrf_token %}
