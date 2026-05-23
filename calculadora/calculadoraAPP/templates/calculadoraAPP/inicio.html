@@ -1,0 +1,49 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carátula de Presentación</title>
+    <!-- Vinculación del CSS unificado -->   
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+<body>
+    <!-- Contenedor de la Hoja de la Carátula -->
+    <div class="caratula-container">
+        
+        <!-- Encabezado Institucional -->
+        <div class="institucion-seccion">
+            <a href="{% url 'inicioU' %}" class="menu-link activo">Inicio</a>
+            <a href="{% url 'calculadoraU' %}" class="menu-link">Calculadora</a>             
+            <h1>UNIANDES</h1>
+            <h2>Ingeniería de Software</h2>
+        </div>
+
+       
+        <div class="titulo-proyecto">
+            <h3>Proyecto de Aplicación Web</h3>           
+        </div>
+
+        <!-- Bloque de Datos Personales -->
+        <div class="datos-personales">
+            <div class="dato-fila"><strong>Integrante:</strong> Luis Torres</div>
+            <div class="dato-fila"><strong>Edad:</strong> 42 Años</div>
+            <div class="dato-fila"><strong>Dirección:</strong> Machachi</div>
+            <div class="dato-fila"><strong>Docente:</strong> Ing. Luis Antonio Llerena Ocaña</div>
+            <div class="dato-fila"><strong>Asignatura:</strong> Programación Web </div>
+            <div class="dato-fila"><strong>Curso/Nivel:</strong> 6to Semestre - Paralelo A</div>
+        </div>
+
+        <!-- Pie de página -->
+        <div class="pie-pagina">
+            <p>Ambato - Ecuador</p>
+            <p>Año Lectivo: 2026</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
+      
